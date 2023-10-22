@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../static/images/YOTA.ico" type="image/x-icon">
+    <title>Register</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            background-image:url(https://wallpaperaccess.com/full/4972921.png);
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="max-w-md w-full p-6 rounded-lg shadow-lg" style="background-color: #ffaed4e2;">
+            <h1 class="text-2xl font-semibold text-center text-gray-500 mt-8 mb-6">Register</h1>
+            <form id="register-form">
+                <div class="mb-4">
+                    <label for="nama" class="block mb-2 text-sm text-gray-600">Nama</label>
+                    <input type="text" id="nama" name="nama"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block mb-2 text-sm text-gray-600">Email</label>
+                    <input type="text" id="email" name="email"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block mb-2 text-sm text-gray-600">Password</label>
+                    <input type="password" id="password" name="password"
+                        class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+                        required>
+                </div>
+                <button type="submit" id="submit"
+                    class="w-32 text-white py-2 rounded-lg mx-auto block focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 mb-2" style="background-color: palevioletred;" >Register</button>
+                <div>Click here if you already have an account  <a class="text-slate-500" style="color: rgb(255, 0, 43)"; href="login.html">(Login)</a></div>
+                </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="register.js"></script>
+</body>
+
+</html>
