@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', main, false);
 
 var background = new Image;
@@ -659,6 +660,39 @@ function main() {
 	}
 	
 	setInterval(control, 1000/30);	
+
+	let account = document.getElementById("account");
+    let username;
+
+    if (localStorage.getItem("auth") != null) {
+        fetch("https://ets-pemrograman-web-f.cyclic.app/users/profile", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("auth")}`
+            },
+        })
+        .then(response => {
+            if (!response.ok) {
+                console.log(response);
+                alert("Get data User Failed, Need Authentication");
+                window.location.href = "login.html";
+            }
+            return response.json();
+        })
+        .then((resp) => {
+            console.log("resp from server ", resp);
+            username = resp.data.nama;
+            account.textContent = `${username} (As BLACK)`
+        })
+        .catch((error) => {
+            alert(error);
+            console.log("error ", error);
+        });
+    } else {
+        alert("Get data User Failed, Need Authentication");
+        window.location.href = "login.html";
+    }
 	
 }
-
+});
